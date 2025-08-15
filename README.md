@@ -1,58 +1,69 @@
-# Conversor de Monedas
+# 💱 Conversor de Monedas en Java
 
-Este proyecto es un conversor de monedas desarrollado en Java. Permite convertir entre diferentes monedas utilizando el endpoint **Pair Conversion** de [ExchangeRate-API](https://www.exchangerate-api.com/).
+![Java](https://img.shields.io/badge/Java-8%2B-orange?logo=java)  
+![Gson](https://img.shields.io/badge/Gson-2.10.1-blue)  
+![API](https://img.shields.io/badge/API-ExchangeRate--API-green)  
+![License](https://img.shields.io/badge/license-Educativo-lightgrey)
 
-## Características
+Este es un **conversor de monedas por consola** desarrollado en **Java**, que convierte entre diferentes divisas en tiempo real usando el endpoint **Pair Conversion** de [ExchangeRate-API](https://www.exchangerate-api.com/).
 
-\- Conversión entre USD, EUR, ARS, MXN y PEN.  
-\- Consumo de datos en tiempo real desde ExchangeRate-API.  
-\- Interfaz sencilla por consola.
+---
 
-## Tecnologías utilizadas
+## 🚀 Características
 
-\- Java  
-\- Gson para el manejo de JSON  
-\- ExchangeRate-API (endpoint Pair Conversion)
-## Requisitos
+- ✅ Conversión entre **USD**, **EUR**, **ARS**, **MXN** y **PEN**.  
+- ✅ Datos en **tiempo real**.  
+- ✅ Interfaz de consola clara y sencilla.  
+- ✅ Código limpio y fácil de extender.
 
-- **Java 8** o superior
-- **Gson** (para manejo de JSON)
-  
-Puedes agregar Gson al proyecto descargando el JAR desde [https://github.com/google/gson](https://github.com/google/gson) o usando un gestor de dependencias como Maven o Gradle.
+---
 
-Ejemplo Maven:
+## 📦 Instalación rápida
 
-```xml
-<dependency>
-  <groupId>com.google.code.gson</groupId>
-  <artifactId>gson</artifactId>
-  <version>2.10.1</version>
-</dependency>
+1. **Clona el repositorio**
+   ```bash
+   git clone https://github.com/AleinxDot/conversorDeMonedas-alura.git
+   ```
+
+2. **Agrega Gson**  
+   - **Maven**:
+     ```xml
+     <dependency>
+       <groupId>com.google.code.gson</groupId>
+       <artifactId>gson</artifactId>
+       <version>2.10.1</version>
+     </dependency>
+     ```
+   - **O descarga el JAR** desde: [https://github.com/google/gson](https://github.com/google/gson)  
+
+3. **Configura tu API Key** en el código.
+
+4. **Compila y ejecuta**
+
+## ⚙️ Funcionamiento
+
+El programa llama al endpoint:
+
+```
+https://v6.exchangerate-api.com/v6/{API_KEY}/pair/{monedaOrigen}/{monedaDestino}/{cantidad}
 ```
 
-## Cómo funciona
+- `{API_KEY}` → Tu clave de ExchangeRate-API.  
+- `{monedaOrigen}` → Código de la moneda origen (ej. `USD`).  
+- `{monedaDestino}` → Código de la moneda destino (ej. `PEN`).  
+- `{cantidad}` → Monto a convertir.
 
-El programa realiza una petición HTTP al endpoint:
+El JSON recibido se procesa con **Gson** y se muestra el resultado.
 
-`https://v6.exchangerate-api.com/v6/{API_KEY}/pair/{monedaOrigen}/{monedaDestino}/{cantidad}`
+---
 
-Donde:  
-\- `{API_KEY}` es tu clave de acceso a la API.  
-\- `{monedaOrigen}` y `{monedaDestino}` son los códigos de las monedas.  
-\- `{cantidad}` es el monto a convertir.
 
-La respuesta se procesa y muestra el resultado de la conversión.
+## 📄 Licencia
 
-## Ejecución
+Este proyecto es **educativo**.  
+Puedes modificarlo y adaptarlo libremente para tus necesidades.
 
-1. Clona el repositorio.
-2. Asegúrate de tener Java instalado.
-3. Ejecuta el programa desde tu IDE o consola.
 
 ## Nota
 
 Necesitas una API Key válida de ExchangeRate-API para que el programa funcione correctamente.
-
-## Licencia
-
-Este proyecto es solo para fines educativos.
