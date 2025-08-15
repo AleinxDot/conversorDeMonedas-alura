@@ -32,7 +32,7 @@ public class Dibujar {
 
     public void resultadoConversion(){
 
-        Double cantidad;
+        double cantidad;
         List<Resultado> save = new ArrayList<>();
         Exportar exportar = new Exportar();
 
